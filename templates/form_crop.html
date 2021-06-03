@@ -1,8 +1,8 @@
 {% extends "form.html" %}
 
 {% block crop %}
-<div class="jumbotron-fluid p-5 rounded-0 bg-primary">
-    <div class="container p-5">
+<div class="jumbotron-fluid p-5 rounded-0 bg-primary ">
+    <div class="container p-5 text-white">
         <h1 class="display-3">Crop Predictor</h1>
         <div class="my-3"></div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu, mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id velit. In in interdum lectus. Phasellus vel blandit elit.</p>
@@ -90,15 +90,13 @@
 
 
 </div>
-
-<div class="container p-5">
-
-    {% if prediction %}
-    <h4 class="text-info text-center">Perfect choice : {{prediction}}</h2>
-    {% else %}
-    <h4 class="text-warning">Perfect choice : {{prediction}}</h2>
-    {% endif %}
-
+{% if prediction!=None %}
+<div class="container-fluid bg-warning ">
+    <div class="container px-5 py-3">
+        <h4 class="text-center text-dark">Result</h4>
+        <h4 class="text-info text-center">Perfect choice : {{prediction}}</h2>   
+    </div>
 </div>
+{% endif %}
 
 {% endblock %}
