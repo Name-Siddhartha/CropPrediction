@@ -1,0 +1,9 @@
+{% extends "body.html" %}
+{% block form %}
+    <h2>This is the form</h2>
+    <!-- crop.html child will have crop prediction -->
+    {% block crop %}{% endblock %}
+
+    <!-- yield.html child will have yield estimation -->
+    {% block yield %}{% endblock %}
+{% endblock %}

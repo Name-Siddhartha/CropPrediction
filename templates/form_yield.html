@@ -1,0 +1,37 @@
+{% extends "form.html" %}
+
+{% block yield %}
+
+<h1>This form is for yield estimation</h1>
+<div class="container text-left">
+
+    <form action="/yield_predict" method="POST">
+
+        <input type="text" name="disname" class="form-control" placeholder='District_Name'><br>
+        <input type="text" name="sea" class="form-control" placeholder='Season'><br>
+        <input type="text" name="are" class="form-control" placeholder='Area'><br>
+        <input type="text" name="temp" class="form-control" placeholder='Temperature'><br>
+        <input type="text" name="rn" class="form-control" placeholder='Rainfall'><br>
+
+        <input type="text" name="sow" class="form-control" laceholder='Sowing Temp'><br>
+        <input type="text" name="harvest" class="form-control" placeholder='Harvest Temp'><br>
+        <input type="text" name="crop" class="form-control" placeholder='crop'><br>
+        <input type="text" name="year" class="form-control" placeholder='Crop_Year'><br>
+
+        <button class='btn btn-primary'>Predict</button>
+
+    </form>
+
+    <div class="row">
+
+        {% if prediction %}
+        <h4 class="text-warning">Perfect choice : {{prediction}}</h2>
+        {% else %}
+        <h4 class="text-warning">Perfect choice : {{prediction}}</h2>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
