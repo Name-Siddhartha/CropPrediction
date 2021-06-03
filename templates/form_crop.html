@@ -1,19 +1,19 @@
 {% extends "form.html" %}
 
 {% block crop %}
-<div class="container">
-    <div class="jumbotron p-5">
+<div class="jumbotron-fluid p-5 rounded-0 bg-primary">
+    <div class="container p-5">
         <h1 class="display-3">Crop Predictor</h1>
+        <div class="my-3"></div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu, mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id velit. In in interdum lectus. Phasellus vel blandit elit.</p>
     </div>
 </div>
 
 <div class="container text-left p-5">
-
     <form action="/predict" method="POST">
         <div class="row justify-content-center">
             <div class="col-md-2 align-self-center">
-                <label for="disname">District Name</label>
+                <label class="m-2" for="disname">District Name</label>
             </div>
             <div class="col-lg-6">
                 <select name="disname" class="form-control">
@@ -29,7 +29,7 @@
         
         <div class="row justify-content-center">
             <div class="col-lg-2 align-self-center">
-                <label for="disname">District Name</label>
+                <label class="m-2" for="disname">District Name</label>
             </div>
             <div class="col-lg-6">
                 <input type="text" id="dummy" class="form-control" name="disname" placeholder='District_Name'>
@@ -60,11 +60,18 @@
         
         <div class="my-3"></div>
         
-        <div class="row justify-content-center"></div>
-        <div class="col-md-3 bg-success"></div>
-        <div class="col-md-9 bg-danger"></div>
-        <label for="temp">Temperature</label>
-        <input type="text" class="form-control" name="temp" placeholder='Temperature'>
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" r="temp">Temperature</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="temp" placeholder='Temperature'>
+            </div>
+        </div>
+        
+        <div class="my-3"></div>
+        
+
 
         <input type="text" class="form-control" name="ph" placeholder='PH'><br>
         <input type="text" class="form-control" name="rn" placeholder='Rainfall'><br>
@@ -81,15 +88,16 @@
         });
     </script>
 
-    <div class="container">
 
-        {% if prediction %}
-        <h4 class="text-in">Perfect choice : {{prediction}}</h2>
-        {% else %}
-        <h4 class="text-warning">Perfect choice : {{prediction}}</h2>
-        {% endif %}
+</div>
 
-    </div>
+<div class="container p-5">
+
+    {% if prediction %}
+    <h4 class="text-info text-center">Perfect choice : {{prediction}}</h2>
+    {% else %}
+    <h4 class="text-warning">Perfect choice : {{prediction}}</h2>
+    {% endif %}
 
 </div>
 
