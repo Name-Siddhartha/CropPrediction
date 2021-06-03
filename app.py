@@ -38,14 +38,14 @@ def predict():
    
 @app.route('/yield_predict', methods=['GET', 'POST'])
 def yield_predict():
- 
+    prediction = None
     if request.method == 'POST':
  
         disname = request.form['disname']
         sea = request.form['sea']
         are = request.form['are']
         temp = request.form['temp']
-       
+        
         rn = request.form['rn']
         sow = request.form['sow']
         harvest = request.form['harvest']
