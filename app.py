@@ -23,7 +23,7 @@ def index():
     #return render_template('home.html', title = 'Home')
     # return render_to_response('yield_pred.html')
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'background.jpg')# this is to get image file
-    return render_template("home.html", user_image = full_filename, formPairs = formYield)#this to display
+    return render_template("home.html", user_image = full_filename, formPairs = formYield, title = 'Home')#this to display
  
  
 @app.route('/predict',methods=['GET','POST'])
