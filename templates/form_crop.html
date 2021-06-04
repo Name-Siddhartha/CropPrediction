@@ -9,6 +9,15 @@
     </div>
 </div>
 
+{% if prediction!=None %}
+<div class="container-fluid bg-warning ">
+    <div class="container px-5 py-3">
+        <h4 class="text-center text-dark">Result!</h4>
+        <h4 class="text-dark text-center">Perfect choice : {{prediction}}</h2>   
+    </div>
+</div>
+{% endif %}
+
 <div class="container text-left p-5">
     <form action="/predict" method="POST">
         <div class="row justify-content-center">
@@ -90,13 +99,5 @@
 
 
 </div>
-{% if prediction!=None %}
-<div class="container-fluid bg-warning ">
-    <div class="container px-5 py-3">
-        <h4 class="text-center text-dark">Result</h4>
-        <h4 class="text-info text-center">Perfect choice : {{prediction}}</h2>   
-    </div>
-</div>
-{% endif %}
 
 {% endblock %}
