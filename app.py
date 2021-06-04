@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, url_for
-import pickle
-import os
-from sklearn.linear_model import LogisticRegression
+
 from sklearn import svm,model_selection, tree, linear_model, neighbors, naive_bayes, ensemble, discriminant_analysis, gaussian_process
+from sklearn.linear_model import LogisticRegression
+
+import os
+import pickle
  
 app = Flask(__name__)
  

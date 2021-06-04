@@ -1,16 +1,16 @@
 #importing the required libraries
 
+from sklearn import metrics, preprocessing, tree
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+from sklearn.model_selection import train_test_split, cross_val_score
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import pickle
 import seaborn as sns
 import warnings
-
-from sklearn import metrics, preprocessing, tree
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
-from sklearn.model_selection import train_test_split, cross_val_score
 
 #from __future__ import print_function
 

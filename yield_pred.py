@@ -1,11 +1,3 @@
-import glob
-import matplotlib.pyplot as plt
-import numpy as np
-import os
-import pandas as pd
-import pickle
-import seaborn as sns
-
 from keras import optimizers
 from keras.layers import Dense, Dropout
 from keras.models import Sequential
@@ -20,6 +12,13 @@ from sklearn.model_selection import cross_val_score, KFold, train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, RobustScaler, StandardScaler
 
+import glob
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+import pandas as pd
+import pickle
+import seaborn as sns
 
 df= pd.read_csv("Karnataka_Crops.csv")
 
