@@ -18,132 +18,134 @@
 </div>
 {% endif %}
 
-<div class="container text-left p-5">
-    <form action="/predict" method="POST">
-        <div class="row justify-content-center">
-            <div class="col-md-2 align-self-center">
-                <label class="m-2" for="disname">District Name</label>
+<div class="container-fluid" style="background-color: #CFD8DC">
+    <div class="container text-left p-5">
+        <form action="/predict" method="POST">
+            <div class="row justify-content-center">
+                <div class="col-md-2 align-self-center">
+                    <label class="m-2" for="disname">District Name</label>
+                </div>
+                <div class="col-lg-6">
+                    <select name="disname" class="form-control">
+                        <option value="None">Select a District Name</option>
+                        <option value="1">D</option>
+                        <option value="2">H</option>
+                        <option value="3">L</option>
+                        <option value="3">La</option>
+                        <option value="3">Lam</option>
+                        <option value="3">Lame</option>
+                        <option value="3">Lost</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <select name="disname" class="form-control">
-                    <option value="None">Select a District Name</option>
-                    <option value="1">D</option>
-                    <option value="2">H</option>
-                    <option value="3">L</option>
-                    <option value="3">La</option>
-                    <option value="3">Lam</option>
-                    <option value="3">Lame</option>
-                    <option value="3">Lost</option>
-                </select>
-            </div>
-        </div>
 
-        <div class="my-3"></div>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="disname">District Name</label>
+            <div class="my-3"></div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="disname">District Name</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required id="dummy" class="form-control" name="disname" placeholder='District Name'>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <input type="text" id="dummy" class="form-control" name="disname" placeholder='District_Name'>
+            
+            <div class="my-3"></div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="sea">Season</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required class="form-control" name="sea" placeholder='Season (Kharif/Rabi/Summer/Year)'>
+                </div>
             </div>
-        </div>
-        
-        <div class="my-3"></div>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="sea">Season</label>
+            
+            <div class="my-3"></div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="are">Area sown</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required class="form-control" name="are" placeholder='Area sown (in hectares)'>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" name="sea" placeholder='Season'>
+            
+            <div class="my-3"></div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="temp">Temperature</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required class="form-control" name="temp" required placeholder='Temperature(in &#8451)'>
+                </div>
             </div>
-        </div>
-        
-        <div class="my-3"></div>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="are">Area sown</label>
-            </div>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" name="are" placeholder='Area sown in hectares'>
-            </div>
-        </div>
-        
-        <div class="my-3"></div>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="temp">Temperature</label>
-            </div>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" name="temp" required placeholder='Temperature in celcius'>
-            </div>
-        </div>
-        
-        <div class="my-3"></div>
-        
+            
+            <div class="my-3"></div>
+            
 
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="ph">pH</label>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="ph">pH</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required class="form-control" name="ph" placeholder='pH'>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" name="ph" placeholder='pH'>
+
+            <div class="my-3"></div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="rn">Rainfall</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required class="form-control" name="rn" placeholder='Rainfall(in mm)'>
+                </div>
             </div>
-        </div>
 
-        <div class="my-3"></div>
+            <div class="my-3"></div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="rn">Rainfall</label>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="p">Phosphorous</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required class="form-control" name="p" placeholder='Phosphorous'>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" name="rn" placeholder='Rainfall'>
+
+            <div class="my-3"></div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="n">Nitrogen</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required class="form-control" name="n" placeholder='Nitrogen'>
+                </div>
             </div>
-        </div>
 
-        <div class="my-3"></div>
+            <div class="my-3"></div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="p">Phosphorous</label>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="k">Potash</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required class="form-control" name="k" placeholder='Potash'>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" name="p" placeholder='Phosphorous'>
+
+            <div class="my-3"></div>
+            <div class="row justify-content-center">
+                <button class='btn btn-primary'>Predict Crop</button>
             </div>
-        </div>
 
-        <div class="my-3"></div>
-
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="n">Nitrogen</label>
-            </div>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" name="n" placeholder='Nitrogen'>
-            </div>
-        </div>
-
-        <div class="my-3"></div>
-
-        <div class="row justify-content-center">
-            <div class="col-lg-2 align-self-center">
-                <label class="m-2" for="k">Potash</label>
-            </div>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" name="k" placeholder='Potash'>
-            </div>
-        </div>
-
-        <div class="my-3"></div>
-        <div class="row justify-content-center">
-            <button class='btn btn-primary'>Predict Crop</button>
-        </div>
-
-    </form>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
