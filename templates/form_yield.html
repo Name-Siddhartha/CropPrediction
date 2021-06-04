@@ -1,43 +1,149 @@
 {% extends "form.html" %}
 
 {% block yield %}
-
-<div class="container">
-    <div class="jumbotron p-5">
+{{ super() }}
+<div class="jumbotron-fluid p-5 rounded-0 bg-success">
+    <div class="container p-5 text-white">
         <h1 class="display-3">Yield Estimator</h1>
+        <div class="my-3"></div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu, mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id velit. In in interdum lectus. Phasellus vel blandit elit.</p>
     </div>
 </div>
 
+{% if prediction!=None %}
+<div class="container-fluid bg-warning ">
+    <div class="container px-5 py-3">
+        <h4 class="text-center text-dark">Result!</h4>
+        <h4 class="text-dark text-center">Estimated Yield : {{prediction}}</h2>   
+    </div>
+</div>
+{% endif %}
+
 <div class="container text-left p-5">
-
     <form action="/yield_predict" method="POST">
+        <div class="row justify-content-center">
+            <div class="col-md-2 align-self-center">
+                <label class="m-2" for="disname">District Name</label>
+            </div>
+            <div class="col-lg-6">
+                <select name="disname" class="form-control">
+                    <option value="null">Select a District Name</option>
+                    <option value="1">City 1</option>
+                    <option value="2">City 2</option>
+                    <option value="3">City 3</option>
+                </select>
+            </div>
+        </div>
 
-        <input type="text" name="disname" class="form-control" placeholder='District_Name'><br>
-        <input type="text" name="sea" class="form-control" placeholder='Season'><br>
-        <input type="text" name="are" class="form-control" placeholder='Area'><br>
-        <input type="text" name="temp" class="form-control" placeholder='Temperature'><br>
-        <input type="text" name="rn" class="form-control" placeholder='Rainfall'><br>
+        <div class="my-3"></div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="disname">District Name</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" name="disname" class="form-control" placeholder='District_Name'>
+            </div>
+        </div>
 
-        <input type="text" name="sow" class="form-control" placeholder='Sowing Temp'><br>
-        <input type="text" name="harvest" class="form-control" placeholder='Harvest Temp'><br>
-        <input type="text" name="crop" class="form-control" placeholder='crop'><br>
-        <input type="text" name="year" class="form-control" placeholder='Crop_Year'><br>
+        <div class="my-3"></div>
 
-        <button class='btn btn-primary'>Predict</button>
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="sea">Season</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="sea" placeholder='Season'>
+            </div>
+        </div>
+        
+        <div class="my-3"></div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="are">Area sown</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="are" placeholder='Area sown in hectares'>
+            </div>
+        </div>
+        
+        <div class="my-3"></div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="temp">Temperature</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="temp" required placeholder='Temperature in celcius'>
+            </div>
+        </div>
+        
+        <div class="my-3"></div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="rn">Rainfall</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="rn" placeholder='Rainfall'>
+            </div>
+        </div>
+
+        <div class="my-3"></div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="sow">Sowing Temp</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" name="sow" class="form-control" placeholder='Sowing Temp'>
+            </div>
+        </div>
+
+        <div class="my-3"></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="harvest">Harvest Temp</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" name="harvest" class="form-control" placeholder='Harvest Temp'>
+            </div>
+        </div>
+
+        <div class="my-3"></div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="crop">Crop Sown</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" name="crop" class="form-control" placeholder='crop'>
+            </div>
+        </div>
+
+        <div class="my-3"></div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-2 align-self-center">
+                <label class="m-2" for="year">Year Sown</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" name="year" class="form-control" placeholder='Crop_Year'>
+            </div>
+        </div>
+        
+        {% for pair in formPairs: %}
+        <input type="text" name="{{ pair[0] }}" class="form-control" placeholder='{{ pair[1] }}'>
+        <P>{{ pair[0] }}{{ pair[1] }}</P>
+        {%endfor%}
+
+        <div class="my-3"></div>
+        <div class="row justify-content-center">
+            <button class='btn btn-primary'>Estimate Yield</button>
+        </div>
 
     </form>
-
-    <div class="row">
-
-        {% if prediction %}
-        <h4 class="text-warning">Perfect choice : {{prediction}}</h2>
-        {% else %}
-        <h4 class="text-warning">Perfect choice : {{prediction}}</h2>
-        {% endif %}
-
-    </div>
-
 </div>
 
 {% endblock %}

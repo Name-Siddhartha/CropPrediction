@@ -1,15 +1,27 @@
 from flask import Flask, render_template, request, url_for
 import pickle
+import os
 from sklearn.linear_model import LogisticRegression
 from sklearn import svm,model_selection, tree, linear_model, neighbors, naive_bayes, ensemble, discriminant_analysis, gaussian_process
  
 app = Flask(__name__)
  
- 
+#this says inside static folder image folder, to set path
+PEOPLE_FOLDER = os.path.join('static', 'img')
+app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
+
+formYield = [
+    ["This", "Stuff"],
+    ["That", "Another Stuff"],
+    ["There", "Yet Another Stuff"]
+]
+
 @app.route('/')
 def index():
-    return render_template('home.html', title = 'Home')
+    #return render_template('home.html', title = 'Home')
     # return render_to_response('yield_pred.html')
+    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'background.jpg')# this is to get image file
+    return render_template("home.html", user_image = full_filename, formPairs = formYield)#this to display
  
  
 @app.route('/predict',methods=['GET','POST'])
