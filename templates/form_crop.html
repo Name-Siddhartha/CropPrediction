@@ -20,13 +20,13 @@
 
 <div class="container-fluid">
     <div class="container text-left p-5">
-        <form action="/predict" method="POST">
+        <form action="/predict" method="POST" id="formCrop">
             <div class="row justify-content-center">
                 <div class="col-md-2 align-self-center">
                     <label class="m-2" for="disname">District Name</label>
                 </div>
                 <div class="col-lg-6">
-                    <select name="disname" class="form-control">
+                    <select name="disname_1" class="form-control">
                         <option value="None">Select a District Name</option>
                         <option value="1">D</option>
                         <option value="2">H</option>
@@ -46,9 +46,10 @@
                     <label class="m-2" for="disname">District Name</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required id="dummy" class="form-control" name="disname" placeholder='District Name'>
+                    <input type="text" required class="form-control" name="disname" placeholder='District Name'>
                 </div>
             </div>
+
             
             <div class="my-3"></div>
             
@@ -147,5 +148,13 @@
         </form>
     </div>
 </div>
+
+<script>
+    cropInput = document.getElementById("#formCrop");
+    if(typeof(cropInput.disname.value) == number) {
+        
+    }
+
+</script>
 
 {% endblock %}
