@@ -1,21 +1,47 @@
-{% extends "body.html" %}
-{% block intro %}
-<div class="jumbotron-fluid bg-light p-5 m-0 text-white rounded-0" style="background-image: url('{{ user_image }}'); background-position: center; background-repeat: no-repeat; background-size: cover;">
-    <div class="container p-3">
-        <h1 class="display-3 m-0">CROP</h1>
-        <h1><small class="display-5">Crop Recommender and Optimizer Platform</small></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu, mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id velit. In in interdum lectus. Phasellus vel blandit elit.</p>
-    </div>
+{% extends "body.html" %} {% block intro %}
+<div
+  class="jumbotron-fluid bg-light p-5 m-0 text-white rounded-0"
+  style=" background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url({{url_for('static',filename='img/back.jpg')}})"
+>
+  <div class="container p-3">
+    <h1 class="display-3 m-0">CROP</h1>
+    <h1>
+      <small class="display-5">Crop Recommender and Optimizer Platform</small>
+    </h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue
+      ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu,
+      mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id
+      velit. In in interdum lectus. Phasellus vel blandit elit.
+    </p>
+  </div>
 </div>
 
-<div class="jumbotron-fluid p-5 m-0 text-dark rounded-0" style="background-color:#ffffff">
-    <div class="container p-3 p-0" style="color:#1B5E20">
-        <h1 class="display-4 text-center"><b>Mission</b></h1>
-        <div class="my-5"></div>
-        <p style="color:#1B5E20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu, mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id velit. In in interdum lectus. Phasellus vel blandit elit.</p>
-        <p style="color:#1B5E20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu, mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id velit. In in interdum lectus. Phasellus vel blandit elit.</p>
-        <p style="color:#1B5E20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu, mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id velit. In in interdum lectus. Phasellus vel blandit elit.</p>
-    </div>
+<div
+  class="jumbotron-fluid p-5 m-0 text-dark rounded-0"
+  style="background-color: #ffffff"
+>
+  <div class="container p-3 p-0" style="color: #1b5e20">
+    <h1 class="display-4 text-center"><b>Mission</b></h1>
+    <div class="my-5"></div>
+    <p style="color: #1b5e20">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue
+      ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu,
+      mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id
+      velit. In in interdum lectus. Phasellus vel blandit elit.
+    </p>
+    <p style="color: #1b5e20">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue
+      ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu,
+      mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id
+      velit. In in interdum lectus. Phasellus vel blandit elit.
+    </p>
+    <p style="color: #1b5e20">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at congue
+      ex, eu rhoncus lorem. Aliquam blandit est venenatis, blandit odio eu,
+      mollis mauris. Praesent ac arcu eget mauris fringilla posuere sit amet id
+      velit. In in interdum lectus. Phasellus vel blandit elit.
+    </p>
+  </div>
 </div>
 {% endblock %}
-

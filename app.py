@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request, url_for
 
-from sklearn import svm,model_selection, tree, linear_model, neighbors, naive_bayes, ensemble, discriminant_analysis, gaussian_process
+from sklearn import svm, model_selection, tree, linear_model, neighbors, naive_bayes, ensemble, discriminant_analysis, gaussian_process
 from sklearn.linear_model import LogisticRegression
 
 import os
 import pickle
- 
+
 app = Flask(__name__)
- 
-#this says inside static folder image folder, to set path
+
+# this says inside static folder image folder, to set path
 PEOPLE_FOLDER = os.path.join('static', 'img')
 app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
 
@@ -18,19 +18,23 @@ formYield = [
     ["There", "Yet Another Stuff"]
 ]
 
+
 @app.route('/')
 def index():
-    #return render_template('home.html', title = 'Home')
+    # return render_template('home.html', title = 'Home')
     # return render_to_response('yield_pred.html')
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'back.jpg')# this is to get image file
-    return render_template("home.html", user_image = full_filename, formPairs = formYield, title = 'Home')#this to display
- 
- 
-@app.route('/predict',methods=['GET','POST'])
+    # this is to get image file
+    full_filename = os.path.join(
+        "\\", app.config['UPLOAD_FOLDER'], 'back.jpg')
+    # this to display
+    return render_template("home.html", user_image=full_filename, formPairs=formYield, title='Home')
+
+
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
     prediction = None
     if request.method == 'POST':
- 
+
         disname = request.form['disname']
         sea = request.form['sea']
         are = request.form['are']
@@ -40,46 +44,46 @@ def predict():
         p = request.form['p']
         n = request.form['n']
         k = request.form['k']
- 
-        data =[[float(disname),float(sea),float(are),float(temp),float(ph),float(rn),float(p),float(n),float(k)]]
- 
+
+        data = [[float(disname), float(sea), float(are), float(
+            temp), float(ph), float(rn), float(p), float(n), float(k)]]
+
         lr = pickle.load(open('RandomForest.pkl', 'rb'))
         prediction = lr.predict(data)[0]
- 
-    return render_template('crop.html', prediction=prediction, title="Crop Prediction")
- 
 
-   
+    return render_template('crop.html', prediction=prediction, title="Crop Prediction")
+
+
 @app.route('/yield_predict', methods=['GET', 'POST'])
 def yield_predict():
     prediction = None
     if request.method == 'POST':
- 
+
         disname = request.form['disname']
         sea = request.form['sea']
         are = request.form['are']
         temp = request.form['temp']
-        
+
         rn = request.form['rn']
         sow = request.form['sow']
         harvest = request.form['harvest']
         crop = request.form['crop']
         year = request.form['year']
 
-        
-        
- 
-        data =[[float(disname),float(sea),float(are),float(temp),float(rn),float(sow),float(harvest),float(crop),float(year)]]
- 
+        data = [[float(disname), float(sea), float(are), float(temp), float(
+            rn), float(sow), float(harvest), float(crop), float(year)]]
+
         lr = pickle.load(open('yield.pkl', 'rb'))
         prediction = lr.predict(data)[0]
- 
-    return render_template('yield.html', prediction=prediction, title = 'Yield Estimation')
+
+    return render_template('yield.html', prediction=prediction, title='Yield Estimation')
+
 
 @app.route('/about', methods=['GET'])
 def about():
-    return render_template('about.html', title = 'About Us')
+    return render_template('about.html', title='About Us')
     # return render_to_response('yield_pred.html')
- 
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
