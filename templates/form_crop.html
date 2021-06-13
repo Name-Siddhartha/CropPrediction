@@ -21,28 +21,50 @@
 
 <div class="container-fluid">
     <div class="container text-left p-5">
-        <form action="/predict" method="POST" id="formCrop">
+        <form action="/predict" method="POST" id="formCrop", autocomplete="off">
             <div class="row justify-content-center">
-                <div class="col-md-2 align-self-center">
-                    <label class="m-2" for="disname">District Name</label>
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="disname">District</label>
                 </div>
                 <div class="col-lg-6">
-                    <select name="disname_1" class="form-control">
+                    <select name="disname_1" class="form-control" required>
                         <option value="None">Select a District Name</option>
-                        <option value="1">D</option>
-                        <option value="2">H</option>
-                        <option value="3">L</option>
-                        <option value="3">La</option>
-                        <option value="3">Lam</option>
-                        <option value="3">Lame</option>
-                        <option value="3">Lost</option>
+                        <option value="0">BAGALKOT</option>
+                        <option value="1">BANGALORE RURAL</option>
+                        <option value="2">BELGAUM</option>
+                        <option value="3">BELLARY</option>
+                        <option value="4">BENGALURU URBAN</option>
+                        <option value="5">BIDAR</option>
+                        <option value="6">BIJAPUR</option>
+                        <option value="7">CHAMARAJANAGAR</option>
+                        <option value="8">CHIKBALLAPUR</option>
+                        <option value="9">CHIKMAGALUR</option>
+                        <option value="10">CHITRADURGA</option>
+                        <option value="11">DAKSHIN KANNAD</option>
+                        <option value="12">DAVANGERE</option>
+                        <option value="13">DHARWAD</option>
+                        <option value="14">GADAG</option>
+                        <option value="15">GULBARGA</option>
+                        <option value="16">HASSAN</option>
+                        <option value="17">HAVERI</option>
+                        <option value="18">KODAGU</option>
+                        <option value="19">KOLAR</option>
+                        <option value="20">KOPPAL</option>
+                        <option value="21">MANDYA</option>
+                        <option value="22">MYSORE</option>
+                        <option value="23">RAICHUR</option>
+                        <option value="24">RAMANAGARA</option>
+                        <option value="25">SHIMOGA</option>
+                        <option value="26">TUMKUR</option>
+                        <option value="27">UDUPI</option>
+                        <option value="28">UTTAR KANNAD</option>
+                        <option value="29">YADGIR</option>
                     </select>
                 </div>
             </div>
 
-            <div class="my-3"></div>
             
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
                     <label class="m-2" for="disname">District Name</label>
                 </div>
@@ -50,11 +72,29 @@
                     <input type="text" required class="form-control" name="disname" placeholder='District Name'>
                 </div>
             </div>
-
             
+            
+            <div class="my-3"></div> -->
+
+            <div class="my-3"></div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="disname">Season</label>
+                </div>
+                <div class="col-lg-6">
+                    <select name="sea" class="form-control" required>
+                        <option value="None">Select a Season</option>
+                        <option value="0">KHARIF</option>
+                        <option value="1">RABI</option>
+                        <option value="2">WHOLE YEAR</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="my-3"></div>
             
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
                     <label class="m-2" for="sea">Season</label>
                 </div>
@@ -63,14 +103,14 @@
                 </div>
             </div>
             
-            <div class="my-3"></div>
+            <div class="my-3"></div> -->
             
             <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
                     <label class="m-2" for="are">Area sown</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="are" placeholder='Area (in hectares)'>
+                    <input type="number" required class="form-control" name="are" placeholder='Area (in hectares)' min="0">
                 </div>
             </div>
             
@@ -81,7 +121,7 @@
                     <label class="m-2" for="temp">Temperature</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="temp" required placeholder='Temperature (in &#8451)'>
+                    <input type="number" required class="form-control" name="temp" required placeholder='Temperature (in &#8451)' min="20" max="50">
                 </div>
             </div>
             
@@ -93,7 +133,7 @@
                     <label class="m-2" for="ph">pH</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="ph" placeholder='pH'>
+                    <input type="number" required class="form-control" name="ph" placeholder='pH' min="4" max="8">
                 </div>
             </div>
 
@@ -104,7 +144,7 @@
                     <label class="m-2" for="rn">Rainfall</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="rn" placeholder='Rainfall (in mm)'>
+                    <input type="number" required class="form-control" name="rn" placeholder='Rainfall (in mm)' min = "0">
                 </div>
             </div>
 
@@ -112,10 +152,10 @@
 
             <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
-                    <label class="m-2" for="p">Phosphorous</label>
+                    <label class="m-2" for="n">Nitrogen (N)</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="p" placeholder='Phosphorous'>
+                    <input type="number" required class="form-control" name="n" placeholder='Nitrogen (in ppm)' min="0" max="50">
                 </div>
             </div>
 
@@ -123,10 +163,10 @@
 
             <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
-                    <label class="m-2" for="n">Nitrogen</label>
+                    <label class="m-2" for="p">Phosphorous (P)</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="n" placeholder='Nitrogen'>
+                    <input type="number" required class="form-control" name="p" placeholder='Phosphorous (in ppm)'min="0" max="100">
                 </div>
             </div>
 
@@ -134,10 +174,10 @@
 
             <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
-                    <label class="m-2" for="k">Potash</label>
+                    <label class="m-2" for="k">Potash (K)</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="k" placeholder='Potash'>
+                    <input type="number" required class="form-control" name="k" placeholder='Potash (in ppm)'min="0" max="30">
                 </div>
             </div>
 

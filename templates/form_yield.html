@@ -22,34 +22,79 @@
 
 <div class="container-fluid">
     <div class="container text-left p-5"> 
-        <form action="/yield_predict" method="POST">
+        <form action="/yield_predict" method="POST", autocomplete="off">
             <div class="row justify-content-center">
-                <div class="col-md-2 align-self-center">
+                <div class="col-lg-2 align-self-center">
                     <label class="m-2" for="disname">District Name</label>
                 </div>
                 <div class="col-lg-6">
-                    <select name="disname" class="form-control">
-                        <option value="null">Select a District Name</option>
-                        <option value="1">City 1</option>
-                        <option value="2">City 2</option>
-                        <option value="3">City 3</option>
+                    <select name="disname" class="form-control" required>
+                        <option value="null">Select a District</option>
+                        <option value="0">BAGALKOT</option>
+                        <option value="1">BANGALORE RURAL</option>
+                        <option value="2">BELGAUM</option>
+                        <option value="3">BELLARY</option>
+                        <option value="4">BENGALURU URBAN</option>
+                        <option value="5">BIDAR</option>
+                        <option value="6">BIJAPUR</option>
+                        <option value="7">CHAMARAJANAGAR</option>
+                        <option value="8">CHIKBALLAPUR</option>
+                        <option value="9">CHIKMAGALUR</option>
+                        <option value="10">CHITRADURGA</option>
+                        <option value="11">DAKSHIN KANNAD</option>
+                        <option value="12">DAVANGERE</option>
+                        <option value="13">DHARWAD</option>
+                        <option value="14">GADAG</option>
+                        <option value="15">GULBARGA</option>
+                        <option value="16">HASSAN</option>
+                        <option value="17">HAVERI</option>
+                        <option value="18">KODAGU</option>
+                        <option value="19">KOLAR</option>
+                        <option value="20">KOPPAL</option>
+                        <option value="21">MANDYA</option>
+                        <option value="22">MYSORE</option>
+                        <option value="23">RAICHUR</option>
+                        <option value="24">RAMANAGARA</option>
+                        <option value="25">SHIMOGA</option>
+                        <option value="26">TUMKUR</option>
+                        <option value="27">UDUPI</option>
+                        <option value="28">UTTAR KANNAD</option>
+                        <option value="29">YADGIR</option>
                     </select>
                 </div>
             </div>
-
-            <div class="my-3"></div>
+            
+            
+            <!-- <div class="my-3"></div>
             
             <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
                     <label class="m-2" for="disname">District Name</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required name="disname" class="form-control" placeholder='District Name'>
+                    <input type="text" required class="form-control" name="disname" placeholder='District Name'>
+                </div>
+            </div> -->
+            
+            
+            <div class="my-3"></div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="disname">Season</label>
+                </div>
+                <div class="col-lg-6">
+                    <select name="sea" class="form-control" required>
+                        <option value="None">Select a Season</option>
+                        <option value="0">KHARIF</option>
+                        <option value="1">RABI</option>
+                        <option value="2">WHOLE YEAR</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="my-3"></div>
-
+            <!-- <div class="my-3"></div>
+            
             <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
                     <label class="m-2" for="sea">Season</label>
@@ -57,16 +102,60 @@
                 <div class="col-lg-6">
                     <input type="text" required class="form-control" name="sea" placeholder='Season (Kharif/Rabi/Summer/Year)'>
                 </div>
+            </div> -->
+            
+            <!-- <div class="my-3"></div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="crop">Crop Sown</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" required name="crop" class="form-control" placeholder='Crop Name'>
+                </div>
+            </div> -->
+
+            <div class="my-3"></div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="disname">Crop Sown</label>
+                </div>
+                <div class="col-lg-6">
+                    <select name="crop" class="form-control" required>
+                        <option value="null">Select a Crop</option>
+                        <option value="0">ARHAR/TUR</option>
+                        <option value="1">BAJRA</option>
+                        <option value="2">CORIANDER</option>
+                        <option value="3">COTTON(LINT)</option>
+                        <option value="4">COWPEA(LOBIA)</option>
+                        <option value="5">DRY CHILLIES</option>
+                        <option value="6">GRAM</option>
+                        <option value="7">GROUNDNUT</option>
+                        <option value="8">JOWAR</option>
+                        <option value="9">LINSEED</option>
+                        <option value="10">MAIZE-K</option>
+                        <option value="11">MAIZE-R</option>
+                        <option value="12">MOONG(GREEN GRAM)</option>
+                        <option value="13">RAGI</option>
+                        <option value="14">RAPESEED &MUSTARD</option>
+                        <option value="15">RICE</option>
+                        <option value="16">SAFFLOWER</option>
+                        <option value="17">SUNFLOWER</option>
+                        <option value="18">URAD</option>
+                        <option value="19">WHEAT</option>
+                    </select>
+                </div>
             </div>
             
             <div class="my-3"></div>
-            
+
             <div class="row justify-content-center">
                 <div class="col-lg-2 align-self-center">
                     <label class="m-2" for="are">Area sown</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="are" placeholder='Area (in hectares)'>
+                    <input type="number" required class="form-control" name="are" placeholder='Area (in hectares)' min="0">
                 </div>
             </div>
             
@@ -77,10 +166,22 @@
                     <label class="m-2" for="temp">Temperature</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="temp" placeholder='Temperature (in &#8451)'>
+                    <input type="number" required class="form-control" name="temp" required placeholder='Temperature (in &#8451)' min="20" max="50">
                 </div>
             </div>
             
+            <div class="my-3"></div>
+            
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="ph">pH</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="number" required class="form-control" name="ph" placeholder='pH' min="4" max="8">
+                </div>
+            </div>
+
             <div class="my-3"></div>
 
             <div class="row justify-content-center">
@@ -88,57 +189,42 @@
                     <label class="m-2" for="rn">Rainfall</label>
                 </div>
                 <div class="col-lg-6">
-                    <input type="text" required class="form-control" name="rn" placeholder='Rainfall (in mm)'>
-                </div>
-            </div>
-
-            <div class="my-3"></div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-2 align-self-center">
-                    <label class="m-2" for="sow">Sowing Temp</label>
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" required name="sow" class="form-control" placeholder='Temperature (in &#8451)'>
-                </div>
-            </div>
-
-            <div class="my-3"></div>
-            <div class="row justify-content-center">
-                <div class="col-lg-2 align-self-center">
-                    <label class="m-2" for="harvest">Harvest Temp</label>
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" required name="harvest" class="form-control" placeholder='Temperature (in &#8451)'>
-                </div>
-            </div>
-
-            <div class="my-3"></div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-2 align-self-center">
-                    <label class="m-2" for="crop">Crop Sown</label>
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" required name="crop" class="form-control" placeholder='Crop Name'>
-                </div>
-            </div>
-
-            <div class="my-3"></div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-2 align-self-center">
-                    <label class="m-2" for="year">Year Sown</label>
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" required name="year" class="form-control" placeholder='Year Sown (1900 - 2100)'>
+                    <input type="number" required class="form-control" name="rn" placeholder='Rainfall (in mm)' min="0">
                 </div>
             </div>
             
-            {% for pair in formPairs: %}
-            <input type="text" required name="{{ pair[0] }}" class="form-control" placeholder='{{ pair[1] }}'>
-            <P>{{ pair[0] }}{{ pair[1] }}</P>
-            {%endfor%}
+            <div class="my-3"></div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="n">Nitrogen (N)</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="number" required class="form-control" name="n" placeholder='Nitrogen (in ppm)' min="0" max="50">
+                </div>
+            </div>
+
+            <div class="my-3"></div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="p">Phosphorous (P)</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="number" required class="form-control" name="p" placeholder='Phosphorous (in ppm)' min="0" max="100">
+                </div>
+            </div>
+
+            <div class="my-3"></div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-2 align-self-center">
+                    <label class="m-2" for="k">Potash (K)</label>
+                </div>
+                <div class="col-lg-6">
+                    <input type="number" required class="form-control" name="k" placeholder='Potash (in ppm)' min="0" max="30">
+                </div>
+            </div>
 
             <div class="my-3"></div>
             <div class="row justify-content-center">

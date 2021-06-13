@@ -75,12 +75,12 @@ def yield_predict():
         sea = request.form['sea']
         are = request.form['are']
         temp = request.form['temp']
-
+        ph = request.form['ph']
         rn = request.form['rn']
-        sow = request.form['sow']
-        harvest = request.form['harvest']
+        p = request.form['p']
+        n = request.form['n']
+        k = request.form['k']
         crop = request.form['crop']
-        year = request.form['year']
 
         data = [[float(disname), float(sea), float(are), float(temp), float(
             rn), float(sow), float(harvest), float(crop), float(year)]]

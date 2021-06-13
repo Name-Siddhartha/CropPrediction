@@ -24,7 +24,7 @@ df= pd.read_csv("Karnataka_Crops.csv")
 
 cr = LabelEncoder()
 se = LabelEncoder()
-dis=LabelEncoder()
+dis= LabelEncoder()
 df['Season'] = se.fit_transform(df['Season'])
 df['crop'] = cr.fit_transform(df['crop'])
 df['District_Name'] = dis.fit_transform(df['District_Name'])
