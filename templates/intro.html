@@ -1,15 +1,20 @@
 {% extends "body.html" %} {% block intro %}
 <div
-  class="jumbotron-fluid bg-light p-5 m-0 text-white rounded-0"
-  style="background-image: url({{url_for('static',filename='img/back.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover;"
+  class="jumbotron-fluid p-5 m-0 text-white rounded-0"
+  style="background-color: #689f38"
 >
+  <!-- <div  style="background-image: url({{url_for('static',filename='img/back.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover;"> -->
   <div class="container p-3">
     <h1 class="display-3 m-0">CROP</h1>
     <h1>
       <small class="display-5">Crop Recommender and Optimizer Platform</small>
     </h1>
     <p>
-      An innovative crop management system that assists the farmers by recommending the crops that are suitable for their area according to the soil constituents, rainfall, temperature etc. and estimating the  crop yield in their area, so that crops don't get wasted and are produced accordingly.
+      An innovative crop management system that assists the farmers by
+      recommending the crops that are suitable for their area according to the
+      soil constituents, rainfall, temperature etc. and estimating the crop
+      yield in their area, so that crops don't get wasted and are produced
+      accordingly.
     </p>
   </div>
 </div>
@@ -22,16 +27,26 @@
     <h1 class="display-4 text-center"><b>Mission</b></h1>
     <div class="my-5"></div>
     <p style="color: #1b5e20">
-     Crop and yield prediction are important aspects of an agricultural system. The crop and it’s yield primarily depends on weather conditions(rain, temperature, etc) and soil parameters(nitrogen, phosphate, potassium, etc). Accurate crop and yield prediction requires fundamental understanding of the functional relationship between agricultural parameters and the interactive weather factors, and to reveal such relationship requires both comprehensive datasets and powerful machine learning algorithms, which plays an important role in making decisions related to agricultural risk management and future predictions. 
-
-
+      Crop and yield prediction are important aspects of an agricultural system.
+      The crop and it’s yield primarily depends on weather conditions(rain,
+      temperature, etc) and soil parameters(nitrogen, phosphate, potassium,
+      etc). Accurate crop and yield prediction requires fundamental
+      understanding of the functional relationship between agricultural
+      parameters and the interactive weather factors, and to reveal such
+      relationship requires both comprehensive datasets and powerful machine
+      learning algorithms, which plays an important role in making decisions
+      related to agricultural risk management and future predictions.
     </p>
     <p style="color: #1b5e20">
-      Predicting the crop yield in advance of its harvest would help the policy makers and farmers for taking appropriate measures for marketing and storage. This project will help the farmers to know the yield of their crop before cultivating onto the agricultural field and thus help them to make the appropriate decisions. An accurate crop prediction model can help farmers to decide on what to grow and when to grow, thus helping the farmers to minimize the loss. 
+      Predicting the crop yield in advance of its harvest would help the policy
+      makers and farmers for taking appropriate measures for marketing and
+      storage. This project will help the farmers to know the yield of their
+      crop before cultivating onto the agricultural field and thus help them to
+      make the appropriate decisions. An accurate crop prediction model can help
+      farmers to decide on what to grow and when to grow, thus helping the
+      farmers to minimize the loss.
     </p>
-    <p style="color: #1b5e20">
-     
-    </p>
+    <p style="color: #1b5e20"></p>
   </div>
 </div>
 {% endblock %}
