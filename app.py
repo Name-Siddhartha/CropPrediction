@@ -33,6 +33,7 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     prediction = None
+    yield2=None
     if request.method == 'POST':
 
         disname = request.form['disname']
@@ -48,10 +49,21 @@ def predict():
         data = [[float(disname), float(sea), float(are), float(
             temp), float(ph), float(rn), float(p), float(n), float(k)]]
 
-        lr = pickle.load(open('RandomForest.pkl', 'rb'))
-        prediction = lr.predict(data)[0]
-
-    return render_template('crop.html', prediction=prediction, title="Crop Prediction")
+        crop_model = pickle.load(open('crop.pkl', 'rb'))
+        
+        prediction = crop_model.predict(data)[0]
+        prediction=0
+        harvest = 123
+        sow=12
+        year=1999
+        data = [[float(disname), float(sea), float(are), float(temp), float(
+            rn), float(sow), float(harvest), float(prediction), float(year)]]
+       
+        yield_model = pickle.load(open('yield.pkl', 'rb'))
+        
+        
+        yield2=yield_model.predict(data)[0]
+    return render_template('crop.html',yield2=yield2, prediction=prediction, title="Crop Prediction")
 
 
 @app.route('/yield_predict', methods=['GET', 'POST'])

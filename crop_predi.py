@@ -33,24 +33,26 @@ Xtrain, Xtest, Ytrain, Ytest = train_test_split(features,target,test_size = 0.2,
 
 acc = []
 model = []
+from sklearn.ensemble import GradientBoostingClassifier
 
-RF = RandomForestClassifier(n_estimators=20, random_state=0)
-RF.fit(Xtrain,Ytrain)
+GB = GradientBoostingClassifier(random_state=0)
 
-predicted_values = RF.predict(Xtest)
+GB.fit(Xtrain,Ytrain)
+
+predicted_values = GB.predict(Xtest)
 x = metrics.accuracy_score(Ytest, predicted_values)
 acc.append(x)
-model.append('RF')
+model.append('Gradient boosting')
+print("Gradient boosting classifier's Accuracy is: ", x)
 
-print("RF's Accuracy is: ", x)
 #print(classification_report(Ytest,predicted_values))
 
 # Dump the trained Naive Bayes classifier with Pickle
-RF_pkl_filename = 'RandomForest.pkl'
+GB_pkl_filename = 'crop.pkl'
 
 # Open the file to save as pkl file
-RF_Model_pkl = open(RF_pkl_filename, 'wb')
-pickle.dump(RF, RF_Model_pkl)
+GB_Model_pkl = open(GB_pkl_filename, 'wb')
+pickle.dump(GB, GB_Model_pkl)
 
 # Close the pickle instances
-RF_Model_pkl.close()
+GB_Model_pkl.close()
