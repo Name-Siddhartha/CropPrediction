@@ -1,51 +1,41 @@
 {% extends "body.html" %} {% block team %}
-<div class="jumbotron-fluid p-5 rounded-0" style="background-color: #7e57c2">
-  <div class="container p-5 text-white">
-    <h1 class="display-3">The Team</h1>
-    <div class="my-3"></div>
-    <p></p>
-  </div>
+<div class="jumbotron-fluid p-5 rounded-0" style="background-color: #FBC02D">
+    <div class="container p-5 text-white">
+        <h1 class="display-3">The Team</h1>
+        <div class="my-3"></div>
+        <p></p>
+    </div>
 </div>
 
 <div class="container-fluid">
-  <div class="container">
-    <div class="row justify-content-center p-2">
-      <div class="card m-4 shadow rounded" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="{{url_for('static', filename='/img/avatar1.png')}}"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Siddhartha</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Designer</h6>
-          <p class="card-text">
-            Dept of Computer Engineering<br />Delhi Technological University
-          </p>
-          <a href="https://github.com/Name-Siddhartha" class="card-link"
-            >GitHub</a
-          >
-        </div>
-      </div>
+    <div class="container">
+        <div class="row justify-content-center p-2">
+            <div class="card m-4 shadow rounded" style="width: 18rem">
+                <img class="card-img-top" src="{{url_for('static', filename='/img/avatar1.png')}}"
+                    alt="Card image cap" />
+                <div class="card-body">
+                    <h5 class="card-title">Siddhartha</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Designer</h6>
+                    <p class="card-text">
+                        Dept of Computer Engineering<br />Delhi Technological University
+                    </p>
+                    <a href="https://github.com/Name-Siddhartha" class="card-link">GitHub</a>
+                </div>
+            </div>
 
-      <div class="card m-4 shadow rounded" style="width: 18rem">
-        <img
-          class="card-img-top"
-          src="{{url_for('static', filename='/img/avatar2.png')}}"
-          alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Siddhartha</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Developer</h6>
-          <p class="card-text">
-            Dept of Computer Engineering<br />Delhi Technological University
-          </p>
-          <a href="https://github.com/Name-Siddhartha" class="card-link"
-            >GitHub</a
-          >
+            <div class="card m-4 shadow rounded" style="width: 18rem">
+                <img class="card-img-top" src="{{url_for('static', filename='/img/avatar2.png')}}"
+                    alt="Card image cap" />
+                <div class="card-body">
+                    <h5 class="card-title">Siddhartha</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Developer</h6>
+                    <p class="card-text">
+                        Dept of Computer Engineering<br />Delhi Technological University
+                    </p>
+                    <a href="https://github.com/Name-Siddhartha" class="card-link">GitHub</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 {% endblock %}
